@@ -19,7 +19,6 @@ class CPU {
 	//No while test yet
 	//Gets value of current PC
 		int curPC=curPCB.pc;
-	
 	//Gets memory value of current PC in RAM
 		string memValue = memory.getRAM(curPC);
 	//Updates PC by 1
@@ -27,10 +26,7 @@ class CPU {
 		
 	//Sends instruction to decoder
 		decoder(memValue);
-	}
-	
-	
-	
+	}	
 //DECODE
     //Read each bit to figure out if I/O instruction or Compute
     //Figure out the opcode
@@ -49,8 +45,6 @@ class CPU {
 		
 	//Gives execute our OPCODE, the type of instruction, and the entire instruction for later use
 		execute(instructionType, decodedValue);
-		
-		
 	}
 
 	//PRECONDITION: The input must be a binary number in a string value
@@ -58,15 +52,13 @@ class CPU {
 	string getOpCode(string decodedValue){
 		return decodedValue.substr(2,7);
 	}
-	
-	
+		
 	//PRECONDITION: The input must be a binary number in a string value
 	//POSTCONDITION: Outputs 2 bits that represents the instruction type to use
 	string getInstructionType(string decodedValue){
 		return decodedValue.substr(0,2);
 	}
-	
-	
+		
 //EXECUTE
     //Depending on the opcode, execute that particular method or statement
 	//all methods called are to-be-implemented
@@ -81,7 +73,6 @@ class CPU {
 			IOFormat(statement);
 	}
 
-  
 public:
   //One of these registers could be the Program Counter
   //OR maybe create a variable called PC
